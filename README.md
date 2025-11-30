@@ -10,13 +10,20 @@ A modern C++23 implementation of a fully kinetic Vlasov-Poisson solver for colli
 
 The Vlasov-Poisson system describes the evolution of a collisionless plasma:
 
-```
-∂fₛ/∂t + v ∂fₛ/∂x + (qₛE/mₛ) ∂fₛ/∂v = 0
+$$
+\frac{\partial f_s}{\partial t}
+  + v\,\frac{\partial f_s}{\partial x}
+  + \frac{q_s E}{m_s}\,\frac{\partial f_s}{\partial v}
+  = 0
+$$
 
-∂²φ/∂x² = -(e/ε₀) Σₛ qₛ ∫ fₛ dv
-```
+$$
+\frac{\partial^2 \phi}{\partial x^2}
+  = -\frac{1}{\varepsilon_0}
+    \sum_s q_s \int f_s\, dv
+$$
 
-where `fₛ(x, v, t)` is the distribution function for species `s`, and `E = -∂φ/∂x` is the self-consistent electric field.
+where $f_s(x, v, t)$ is the distribution function for species $s$, and $E = -\frac{\partial \phi}{\partial x}$ is the self-consistent electric field.
 
 This solver uses **mobile phase points** that carry constant distribution function values (Liouville's theorem), interpolated onto a fixed spatial grid for field computation. This approach avoids the recurrence effect that plagues traditional Eulerian Vlasov codes.
 
@@ -140,12 +147,15 @@ class Particles {
 
 Phase points follow the characteristic equations:
 
-```
-dx/dt = v
-dv/dt = (q/m) E(x, t)
-```
+$$
+\frac{dx}{dt} = v
+$$
 
-The distribution function `f` remains constant along characteristics (Liouville's theorem), eliminating numerical diffusion in velocity space.
+$$
+\frac{dv}{dt} = \frac{q}{m} E(x, t)
+$$
+
+The distribution function $f$ remains constant along characteristics (Liouville's theorem), eliminating numerical diffusion in velocity space.
 
 ## Related Publications
 
