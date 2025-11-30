@@ -1,0 +1,95 @@
+# ==============================================================================
+# Build Directories (out-of-source builds)
+# ==============================================================================
+build/
+install/
+cmake-build-*/
+out/
+
+# ==============================================================================
+# In-Source Build Artifacts (should never exist, but just in case)
+# ==============================================================================
+# CMake generated files in source tree
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+!GNUmakefile
+compile_commands.json
+Testing/
+_deps/
+
+# Library and binary artifacts in source tree
+*.a
+*.o
+*.o.d
+*.obj
+*.lib
+*.so
+*.dylib
+*.exe
+*.out
+
+# GTest discovery files
+*_include.cmake
+*_tests.cmake
+
+# Binaries in source tree
+lib/
+bin/
+
+# ==============================================================================
+# IDE and Editor Files
+# ==============================================================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.cproject
+.settings/
+*.code-workspace
+
+# ==============================================================================
+# Documentation
+# ==============================================================================
+docs/html/
+docs/latex/
+docs/xml/
+
+# ==============================================================================
+# OS Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==============================================================================
+# Temporary and Log Files
+# ==============================================================================
+*.tmp
+*.temp
+*.log
+*.bak
+
+# ==============================================================================
+# Python (for any scripts)
+# ==============================================================================
+__pycache__/
+*.py[cod]
+.Python
+*.egg-info/
+venv/
+.env
+
+# ==============================================================================
+# User-specific files
+# ==============================================================================
+CMakeUserPresets.json
